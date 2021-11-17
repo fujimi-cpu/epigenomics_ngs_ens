@@ -1,3 +1,13 @@
 # TP de Next Generation Sequencing
 ## Epigenomics
-### Test
+### Contexte
+
+region masquee 
+
+
+### Données 
+
+
+### Traitement des données
+
+### Résultats
