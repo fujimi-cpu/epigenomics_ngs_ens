@@ -27,9 +27,9 @@ ILLUMINACLIP:${Nextera}:2:30:10 SLIDINGWINDOW:4:15 MINLEN:25
 done
 
 
-cd ~/mydatalocal/epigenomics_ngs_ens/processed_data/trimmed_data
+cd ~/mydatalocal/epigenomics_ngs_ens/processed_data/fastqc_trimmed_data/trimmed_data
 
-for f in *.fastq.gz #permet de prendre tous les reads en une seule fois pour viter de prendre reverse et forward
+for f in ~/mydatalocal/epigenomics_ngs_ens/processed_data/trimmed_data/*.fastq.gz #permet de prendre tous les reads en une seule fois pour viter de prendre reverse et forward
 do
 echo $f
 fastqc $f
