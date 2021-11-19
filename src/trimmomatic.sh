@@ -35,4 +35,5 @@ echo $f
 fastqc $f
 done
 
+
 multiqc .

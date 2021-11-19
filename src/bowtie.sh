@@ -29,3 +29,17 @@ samtools index $f
 samtools idxstats $f
 done
 
+#Enlever les séquences inintéressantes
+#
+
+
+
+
+
+for f in $workdir/*.bam
+do 
+java -jar picard.jar MarkDuplicates \
+      I=$f \
+      O=${f/".bam"/"marked_duplicates.bam"}\
+      M=${f/".bam"/"marked_dup_metrics.txt"}
+done
