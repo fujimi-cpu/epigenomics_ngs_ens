@@ -21,3 +21,11 @@ done
 
 
 
+cd $workdir
+
+for f in $workdir/*.bam
+do 
+samtools index $f
+samtools idxstats $f
+done
+
