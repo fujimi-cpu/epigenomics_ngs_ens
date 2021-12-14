@@ -2,9 +2,9 @@
 ## Epigenomics
 ### Contexte
 
-region masquee 
+region masquee : regions repetees
 
-
+genome cachee, ex chromosome 2, genome mitochondrial inséré
 ### Données 
 
 
