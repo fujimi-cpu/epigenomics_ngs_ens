@@ -18,6 +18,7 @@ ID=2019_007_S7_R # sample ID
 ID=2020_372 # sample ID
 ID=SRR4000473_ # sample ID
 ID=2019_007_S7_R # sample ID
+ID=2020_374_S4_R
 
 bam_suffix=mapped_sortedmarked_duplicates_filtered.bam
 
