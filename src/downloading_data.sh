@@ -15,5 +15,5 @@ wget --user='tp_ngs' --password='Arabido2021!' https://flower.ens-lyon.fr/tp_ngs
 wget --user='tp_ngs' --password='Arabido2021!' https://flower.ens-lyon.fr/tp_ngs/arabidocontratac/Supporting_files/TAIR10_ChrLen.txt
 
 cd ~/mydatalocal/epigenomics_ngs_ens/processed_data/filtered
-wget --user='tp_ngs' --password='Arabido2021!' https://flower.ens-lyon.fr/tp_ngs/arabidocontratac/Data/2020_374_S4.bam
-mv 2020_374_S4.bam 2020_374_S4_Rmapped_sortedmarked_duplicates_filtered.bam
+wget --user='tp_ngs' --password='Arabido2021!' https://flower.ens-lyon.fr/tp_ngs/arabidocontratac/Data/2020_374_S4.corrected.bam
+mv 2020_374_S4.corrected.bam 2020_374_S4_Rmapped_sortedmarked_duplicates_filtered.bam
