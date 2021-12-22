@@ -33,7 +33,9 @@ We use here the famous Arabidopsis thaliana model for the study of root developm
 
 <a name="Data_d"></a>
 ### i. Data download
-
+```
+download.sh
+```
 
 <a name="dataprocess_instruction"></a>
 ### ii. Data processing
