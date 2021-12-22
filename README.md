@@ -1,39 +1,43 @@
 # Next Generation Sequencing practical work project: 
 ## Table of Contents 
 1. [ Project description. ](#desc)
-    A. [  Data and biological context. ](#biocontext)
-2. [ How to run the project. ](#usage)
-    [  Data and biological context. ](#biocontext)
-
+    1. [  Data and biological context. ](#biocontext)
+    2. [  Data processing. ](#dataprocess)
+    3. [  Data Analysis. ](#analysis)
+2. [ How to run the project. ](#run)
+    1. [  Data and biological context. ](#biocontext_instruction)
+    2. [  Data processing. ](#dataprocess_instruction)
+    3. [  Data Analysis. ](#analysis_instruction)
 
 
 <a name="desc"></a>
 ## 1. Project description
-<a name="biocontext"></a>
-### i. Data and biological context
-sometext
 
-<a name="usage"></a>
+<a name="dataprocess"></a>
+### i. Data and biological context
+
+
+<a name="biocontext"></a>
+### ii. Data processing.
+
+
+<a name="analysis"></a>
+### iii. Data Analysis.
+
+
+<a name="run"></a>
 ## 2. How to run the project
 
-###Download data
-Datasets reqired are either from personnal dataset or from the recent published paper:
-region masquee : regions repetees
-
-genome cachee, ex chromosome 2, genome mitochondrial inséré
-%6 Mapping
-
-%7 Filtering
-
-%Controle qualité atacseq
-
-%MACS2
+<a name="dataprocess_instruction"></a>
+### i. Data and biological context
 
 
+<a name="biocontext_instruction"></a>
+### ii. Data processing.
 
 
+<a name="analysis_instruction"></a>
+### iii. Data Analysis.
 
-
-### Traitement des données
-
-### Résultats
+<!--region masquee : regions repeteés
+genome cachee, ex chromosome 2, genome mitochondrial inséré-->
