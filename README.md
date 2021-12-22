@@ -1,9 +1,17 @@
 # Next Generation Sequencing practical work project: 
 ## Table of Contents 
-[Headers](##Project description)  
-[Emphasis](##emphasis)  
-...snip...    
-<a name="headers"/>
+1. [ Description. ](#desc)
+2. [ Usage tips. ](#usage)
+
+<a name="desc"></a>
+## 1. Description
+
+sometext
+
+<a name="usage"></a>
+## 2. Usage tips
+
+sometext
 
 ## Project description
 
