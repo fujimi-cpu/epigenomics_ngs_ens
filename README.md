@@ -1,9 +1,7 @@
 # Next Generation Sequencing practical work project: 
 ## Table of Contents 
 1. [ Project description. ](#desc)
-
-  A. [  Data and biological context. ](#biocontext)
-
+...A. [  Data and biological context. ](#biocontext)
 2. [ How to run the project. ](#usage)
 
 
