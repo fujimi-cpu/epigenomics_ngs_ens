@@ -48,15 +48,16 @@ The data has different parts. The first part is the data from the ATAC-seq analy
 
 <a name="dataprocess_instruction"></a>
 ### ii. Data processing
-The bash files to run to process the data are the following ``` multiQC.sh ``` ``` trimmomatic.sh ``` ``` bowtie.sh ``` ``` filtering.sh ```
-``` atac_qc.sh ``` in order to evaluate the quality of the ATAC seq data
-
-``` atac_qc.sh ``` Peak calling
+The bash files to run to process the data are the following ``` multiQC.sh ``` (needs to add fastqc)
+Rrimming step which consists in removing adapters and fragments of bad quality ``` trimmomatic.sh ```
+Mapping step placing reads on the Arabidopsis thaliana reference genome ``` bowtie.sh ```
+Filtering step removes reads with low mapping quality, duplicate reads and reads in blacklisted regions ``` filtering.sh ```
+Evaluation of the quality of ATAC-seq by checking the tss enrichment and the distance between two paired reads ``` atac_qc.sh ``` in order to evaluate the quality of the ATAC seq data
+Peak calling using macs2 finds statistically the areas of the genome that are significantly more covered by reads and therefore accessible to dnase ``` atac_qc.sh ``` 
 
 <a name="analysis_instruction"></a>
 ### iii. Data Analysis on R
-``` analysis.sh ``` All the peaks from the two conditions (whole root and quiescent cells) are taken and mapped on the genome, then the coverage is computed on these conditions
-
+All the peaks from the two conditions (whole root and quiescent cells) are taken and mapped on the genome, then the coverage is computed on these conditions ``` analysis.sh ``` 
 ```analysis_comparison_WOX5-WR.R``` plot and extract the conditions for which the coverage is stronger on the whole root or quiescent cells data set.
 
 
