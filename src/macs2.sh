@@ -16,7 +16,10 @@ echo $f
 echo ${idbase}
 echo ${ID}
 macs2 callpeak -t $f -n ${ID} --outdir ${outputDir} --nomodel --broad --extsize 50 --shift -25 -q 0.01 -g 10e7 --broad-cutoff 0.01 --keep-dup "all" -B 
-#g genome size -q threshold --broad rassembles les peaks proches  --extsize 150 --shift -75 zone autour de la coupure
+
+#no model, indeed the model is used for the chip-seq
+#-q 0.01 corresponds to the confidence threshold
+#-g 10e7 is the size of the arabidposis genome
 
 #Rscript ${outputDir}/NA_model.r
 done
@@ -30,5 +33,4 @@ for f in ${workingDir}/processed_data/filtered/*filtered.bam
 do
 samtools index $f
 done
-
-supd
+#We can load these files on IGV (+link) to visualize the coverage and the peaks found
