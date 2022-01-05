@@ -24,7 +24,7 @@ ${prefixe}1_paired.fastq.gz ${prefixe}1_unpaired.fastq.gz \
 ${prefixe}2_paired.fastq.gz ${prefixe}2_unpaired.fastq.gz \
 ILLUMINACLIP:${Nextera}:2:30:10 SLIDINGWINDOW:4:15 MINLEN:25
 done
-#Nestera and the type of adapters
+#Nextera and the type of adapters
 #MINLEN:36 allows to drop reads under 36 bases long
 #Allows to remove trailings and leadings of bad quality
 
