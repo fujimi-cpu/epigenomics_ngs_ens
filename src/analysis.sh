@@ -1,10 +1,10 @@
 
-
 workingDir=/home/rstudio/mydatalocal/epigenomics_ngs_ens
 outputDir=/home/rstudio/mydatalocal/epigenomics_ngs_ens/processed_data/macs2
 ataDir=/home/rstudio/mydatalocal/epigenomics_ngs_ens/data/supporting_data
 
-#gtf donne coordonnées, nom du gene, orientation pour comparaison, filtre le gtf avant
+#gtf gives coordinates, gene name, orientation for comparison, filters the gtf before
+#the file genome.gtf is the genome of Arabidopsis thaliana
 
 gtf=${supdataDir}/Arabidopsis_thaliana.TAIR10.52.gtf
 gtf_filtered=${gtf/.gtf/.filtered.gtf}
@@ -18,8 +18,7 @@ do
 echo $f
 bedtools closest -a $f -b ${gtf_filtered} -D ref > ${f/_peaks.broadPeak/}.nearest.genes.txt
 done
-#D
-
+#bedtools is a practical software for operations on reads and sequences
 
 bedtools intersect -a ${workingDir}/processed_data/uploaded_broadpeak/2020_374_S4.corrected_peaks.broadPeak -b ${workingDir}/processed_data/uploaded_broadpeak/2019_007_S7_R_peaks.broadPeak > ${f/_peaks.broadPeak/}.nearest.genes.txt
 
@@ -30,10 +29,10 @@ echo $f
 bedtools closest -a $f -b ${gtf_filtered} -D ref > ${f/_peaks.broadPeak/}.nearest.genes.txt
 done
 
-#comparer avec bedtools intersect chaque fichier WOX5 donc quiescentes souches avec 374 de la racine
+#compare with bedtools intersect each WOX5 file so quiescent strains with 374 of the root
 annotationsDir=/home/rstudio/mydatalocal/epigenomics_ngs_ens/processed_data/analysis
 mkdir -p $annotationsDir
-#pour 007 quiescent/racine 374
+#Compare two datasts: whole root and quiescent cells
 WOX5=2019_007_S7_R.nearest.genes.txt
 racine=2020_374_S4.corrected_.nearest.genes.txt
 head ${workingDir}/processed_data/macs2/$WOX5
@@ -45,7 +44,7 @@ wc -l $annotationsDir/${WOX5/.nearest.genes.txt/}_${racine/.nearest.genes.txt/}_
 
 echo $annotationsDir/${WOX5/.nearest.genes.txt/}_${racine/.nearest.genes.txt/}_difference.txt
 
-#Maintenant on fusionne les deux conditions avec bedtools merge
+#Now we merge the two conditions with bedtools merge
 
 bedtools merge –i ${workingDir}/processed_data/macs2/$WOX5 ${workingDir}/processed_data/macs2/$racine > $annotationsDir/${WOX5/.nearest.genes.txt/}_${racine/.nearest.genes.txt/}_union.txt
 
@@ -88,3 +87,4 @@ do
 echo ${f/_coverage.txt/}.nearest.genes.txt
 bedtools closest -a $f -b ${gtf_filtered} -D ref > ${f/_coverage.txt/}.nearest.genes.txt
 done
+
