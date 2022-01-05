@@ -26,18 +26,20 @@ How is stem cell quiescence programmed? By comparing the accessible regions in t
 <a name="biocontext"></a>
 ### ii. Data processing
 
-##### Evaluation of sequencing with fastqc
+#### Evaluation of sequencing with fastqc
 fastqc is a sequencing quality study software. It allows to evaluate the mean quality score, the bias with respect to the transposase (in particular the 15 nucleotides at the level of the cut which can interact with the enzyme), the distribution of the length of the sequences, the level of duplication, the over-representation of certain sequences, and finally the quantity of adapters produced by the transposase during the cut.
 
-##### Trimming with trimmomatic
-Trimming is a first step of data processing, it allows to remove the adapters introduced by transposase and pcr (nextera adapters) and the bad quality sequences. We use the trimmomatic software.
+#### Trimming with trimmomatic
+Trimming is a first step of data processing, it allows to remove the adapters introduced by transposase and pcr (nextera adapters) and the bad quality sequences. We also removes chloroplastic and mitochondrial genome. We use the trimmomatic software.
 
 #### Mapping with bowtie2
+Mapping is used to place reads on the Arabidopsis thaliana reference genome.
 
 #### Filtering with samtools
+Filtering removes reads with low mapping quality, duplicate reads, and reads in blacklisted regions. samtools is a multipurpose tool that allows us to filter our data.
 
-##### Peak calling with macs2
-The peak calling allows the localization of peaks, i.e. the zones accessible to transposase. For this we use macs2, a software using a fish model on the cuts. The sinal being noisy because the cuts are all along the genome, we want to differentiate a part of the genome accessible from the background noise.
+#### Peak calling with macs2
+The peak calling allows the localization of peaks, i.e. the zones accessible to transposase. For this we use macs2, a software using a fish model on the cuts. The signal being noisy because the cuts are all along the genome, we want to differentiate a part of the genome accessible from the background noise.
 
 
 <a name="analysis"></a>
