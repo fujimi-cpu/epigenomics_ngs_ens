@@ -58,8 +58,8 @@ The scripts are annotated so you may follow step by step. You may also want to c
 
 <a name="dataprocess_instruction"></a>
 ### i. Data downloading
-To download the data run the following script ``` downloading_data.sh ``` that is the private data. The other part of the data is taken from the following paper  [Combining ATAC-seq with nuclei sorting for discovery of cis-regulatory regions in plant genomes](https://academic.oup.com/nar/article/45/6/e41/2605943) and are available [here](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE85203).
-The data has different parts. The first part is the data from the ATAC-seq analysis. The second part is the genomic information of A. thaliana allowing the mapping of the sequences. The zipped data in ``` .gz ``` can be unzipped with ``` gzip -d file.gz ```. The files named R2 R2 correspond to the technical replicas, i.e. two same samples in the same conditions
+
+The data has different parts. The first part is the data from the ATAC-seq analysis. To download the data run the following script ``` downloading_data.sh ``` that is the private data. The other part of the data is taken from the following paper  [Combining ATAC-seq with nuclei sorting for discovery of cis-regulatory regions in plant genomes](https://academic.oup.com/nar/article/45/6/e41/2605943) and are available [here](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE85203). The second part is the genomic information of A. thaliana allowing the mapping of the sequences. The zipped data in ``` .gz ``` can be unzipped with ``` gzip -d file.gz ```. The files named R2 R2 correspond to the technical replicas, i.e. two same samples in the same conditions
 
 
 <a name="Data_d"></a>
@@ -70,6 +70,7 @@ Mapping step placing reads on the Arabidopsis thaliana reference genome ``` bowt
 Filtering step removes reads with low mapping quality, duplicate reads and reads in blacklisted regions ``` filtering.sh ```.
 Evaluation of the quality of ATAC-seq by checking the tss enrichment and the distance between two paired reads ``` atac_qc.sh ``` in order to evaluate the quality of the ATAC seq data.
 Peak calling using macs2 finds statistically the areas of the genome that are significantly more covered by reads and therefore accessible to dnase ``` atac_qc.sh ```.
+We can load these files on [IGV](https://software.broadinstitute.org/software/igv/)  to visualize the coverage and the peaks found
 
 <a name="analysis_instruction"></a>
 ### iii. Data Analysis on R
