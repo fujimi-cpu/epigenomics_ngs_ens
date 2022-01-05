@@ -16,10 +16,10 @@
 <a name="dataprocess"></a>
 ### i. Data and biological context
 
-During development, genetic regulation establishes the identity of cells and their differentiation pathway. In particular through gene mastering. Through a game of activation and hinibition of different genes, the cells differentiate. One way of activating and repressing is the shaping of the chromatin state, a strategy known in particular in the development of plants. By studying the state of this chromatin we can compare the different epigenetic states of cells. A known technique is the chromatin immunoprecipitation sequencing (ChIP-seq) techinque, which targets histones with antibodies, the analysis then allows to map the antibodies on the genome, we can also map transcript factors if we have the right antibodies. This technique is nevertheless specialized in antibodies. We could try to have the global epigenomic landscape of dna accessibility by taking into account the different folds and proteins interacting with the dna, this is the objective of the Assay for Transposase-Accessible Chromatin with highthroughput sequencing (ATAC-seq).
+During development, genetic regulation establishes the identity of cells and their differentiation pathway. In particular through gene mastering. Through a game of activation and hinibition of different genes, the cells differentiate. One way of activating and repressing is the shaping of the chromatin state, a strategy known in particular in the development of plants. By studying the state of this chromatin we can compare the different epigenetic states of cells. A known technique is the chromatin immunoprecipitation sequencing (ChIP-seq) techinque, which targets histones with antibodies, the analysis then allows to map the antibodies on the genome, we can also map transcript factors if we have the right antibodies. This technique is nevertheless specialized in antibodies. We could try to have the global epigenomic landscape of dna accessibility by taking into account the different folds and proteins interacting with the dna, this is the objective of the Assay for Transposase-Accessible Chromatin with highthroughput sequencing ([ATAC-seq](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4374986/)).
 We use here the famous Arabidopsis thaliana model for the study of root development. In particular we are interested in the root apical meristem (RAM) and the cells of the quiescent centre (QC).
 Note that the atac seq is a bulk method. That is to say that we need enough nuclei to study a cell type. We therefore lose the information linked to the heterogeneity within the extracted group of cells.
-INTACT is a technique that allowed us to study specialized cells. By using a cell marker promoter expressing a gfp to a biotin binding peptide and a nuclear envelope attachment we can recover the nuclei associated with these cells.
+[INTACT](https://pubmed.ncbi.nlm.nih.gov/21212783/) is a technique that allowed us to study specialized cells. By using a cell marker promoter expressing a gfp to a biotin binding peptide and a nuclear envelope attachment we can recover the nuclei associated with these cells.
 How is stem cell quiescence programmed? By comparing the accessible regions in the genomes of quiescent cells and root cells in general, we can find genes that are accessible only in the latter. On the other hand it is expected to find few genes more expressed in the whole root and not in the stem cells because all the cells of the root include different differentiated types very different from each other
 
 
@@ -58,18 +58,18 @@ The scripts are annotated so you may follow step by step. You may also want to c
 
 <a name="dataprocess_instruction"></a>
 ### i. Data downloading
-To download the data run the following script ``` downloading_data.sh ```
+To download the data run the following script ``` downloading_data.sh ``` that is the private data. The other part of the data is taken from the following paper  [Combining ATAC-seq with nuclei sorting for discovery of cis-regulatory regions in plant genomes](https://academic.oup.com/nar/article/45/6/e41/2605943) and are available [here](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE85203).
 The data has different parts. The first part is the data from the ATAC-seq analysis. The second part is the genomic information of A. thaliana allowing the mapping of the sequences. The zipped data in ``` .gz ``` can be unzipped with ``` gzip -d file.gz ```. The files named R2 R2 correspond to the technical replicas, i.e. two same samples in the same conditions
 
 
 <a name="Data_d"></a>
 ### ii. Data processing
-The bash files to run to process the data are the following ``` multiQC.sh ``` (needs to add fastqc)
-Rrimming step which consists in removing adapters and fragments of bad quality ``` trimmomatic.sh ```
-Mapping step placing reads on the Arabidopsis thaliana reference genome ``` bowtie.sh ```
-Filtering step removes reads with low mapping quality, duplicate reads and reads in blacklisted regions ``` filtering.sh ```
-Evaluation of the quality of ATAC-seq by checking the tss enrichment and the distance between two paired reads ``` atac_qc.sh ``` in order to evaluate the quality of the ATAC seq data
-Peak calling using macs2 finds statistically the areas of the genome that are significantly more covered by reads and therefore accessible to dnase ``` atac_qc.sh ``` 
+The bash files to run to process the data are the following ``` multiQC.sh ```.
+Rrimming step which consists in removing adapters and fragments of bad quality ``` trimmomatic.sh ```.
+Mapping step placing reads on the Arabidopsis thaliana reference genome ``` bowtie.sh ```.
+Filtering step removes reads with low mapping quality, duplicate reads and reads in blacklisted regions ``` filtering.sh ```.
+Evaluation of the quality of ATAC-seq by checking the tss enrichment and the distance between two paired reads ``` atac_qc.sh ``` in order to evaluate the quality of the ATAC seq data.
+Peak calling using macs2 finds statistically the areas of the genome that are significantly more covered by reads and therefore accessible to dnase ``` atac_qc.sh ```.
 
 <a name="analysis_instruction"></a>
 ### iii. Data Analysis on R
