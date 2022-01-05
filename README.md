@@ -5,7 +5,7 @@
     2. [  Data processing ](#dataprocess)
     3. [  Data Analysis ](#analysis)
 2. [ How to run the project ](#run)
-    1. [  Data download ](#Data_d)
+    1. [  Data downloading ](#Data_d)
     2. [  Data processing ](#dataprocess_instruction)
     3. [  Data Analysis ](#analysis_instruction)
 
@@ -56,12 +56,13 @@ The analysis script is a R script and can be ran from Rstudio or from a bash ter
 <a name="Data_d"></a>
 The scripts are annotated so you may follow step by step. You may also want to change the folder path defined to save or import the files at the beginning of the different scripts.
 
-### i. Data download
+<a name="dataprocess_instruction"></a>
+### i. Data downloading
 To download the data run the following script ``` downloading_data.sh ```
 The data has different parts. The first part is the data from the ATAC-seq analysis. The second part is the genomic information of A. thaliana allowing the mapping of the sequences. The zipped data in ''.gz'' can be unzipped with '''gzip -d file.gz'''. The files named R2 R2 correspond to the technical replicas, i.e. two same samples in the same conditions
 
 
-<a name="dataprocess_instruction"></a>
+<a name="Data_d"></a>
 ### ii. Data processing
 The bash files to run to process the data are the following ``` multiQC.sh ``` (needs to add fastqc)
 Rrimming step which consists in removing adapters and fragments of bad quality ``` trimmomatic.sh ```
