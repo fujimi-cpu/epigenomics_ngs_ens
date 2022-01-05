@@ -59,7 +59,7 @@ The scripts are annotated so you may follow step by step. You may also want to c
 <a name="dataprocess_instruction"></a>
 ### i. Data downloading
 To download the data run the following script ``` downloading_data.sh ```
-The data has different parts. The first part is the data from the ATAC-seq analysis. The second part is the genomic information of A. thaliana allowing the mapping of the sequences. The zipped data in ''.gz'' can be unzipped with '''gzip -d file.gz'''. The files named R2 R2 correspond to the technical replicas, i.e. two same samples in the same conditions
+The data has different parts. The first part is the data from the ATAC-seq analysis. The second part is the genomic information of A. thaliana allowing the mapping of the sequences. The zipped data in ``` .gz ``` can be unzipped with ``` gzip -d file.gz ```. The files named R2 R2 correspond to the technical replicas, i.e. two same samples in the same conditions
 
 
 <a name="Data_d"></a>
@@ -73,8 +73,7 @@ Peak calling using macs2 finds statistically the areas of the genome that are si
 
 <a name="analysis_instruction"></a>
 ### iii. Data Analysis on R
-All the peaks from the two conditions (whole root and quiescent cells) are taken and mapped on the genome, then the coverage is computed on these conditions ``` analysis.sh ``` 
-```analysis_comparison_WOX5-WR.R``` plot and extract the conditions for which the coverage is stronger on the whole root or quiescent cells data set.
+All the peaks from the two conditions (whole root and quiescent cells) are taken and mapped on the genome, then the coverage is computed on these conditions ``` analysis.sh ```. Then we plot and extract the conditions for which the coverage is stronger on the whole root or quiescent cells data set in ```analysis_comparison_WOX5-WR.R```.
 
 
 <!--region masquee : regions repeteés
